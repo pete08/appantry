@@ -3,7 +3,7 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+#   movies = Movie.create([{ name: Star Wars }, { name: Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # food = [
@@ -34,4 +34,40 @@
 # User.create(email: "hue@email.com", ppl_in_house: 3)
 # User.create(email: "opulent@email.com", ppl_in_house: 4)
 
-UserItem.create(item_id: 1, user_id: 1, buy_date:)
+# UserItem.create(item_id: 2, user_id: 3, buy_date: Date.new(2020, 03,
+# 10), used: false, future_interest: true)
+
+# UserItem.create(item_id: 1, user_id: 2, buy_date: Date.new(2020, 03, 
+# 10), used: false, future_interest: true)
+
+# UserItem.create(item_id: 1, user_id: 4, buy_date: Date.new(2020, 03, 
+# 10), used: false, future_interest: true)
+
+# UserItem.create(item_id: 2, user_id: 4, buy_date: Date.new(2020, 03, 10), used: false, future_interest: true)
+
+# UserItem.create(item_id: 4, user_id: 4, buy_date: Date.new(2020, 03, 10), used: false, future_interest: true)
+
+# UserItem.create(item_id: 1, user_id: 3, buy_date: Date.new(2020, 03, 
+# 10), used: false, future_interest: true)
+
+# UserItem.create(item_id: 5, user_id: 2, buy_date: Date.new(2020, 03, 
+# 10), used: false, future_interest: true)
+
+# UserItem.create(item_id: 5, user_id: 4, buy_date: Date.new(2020, 03, 
+# 17), used: false, future_interest: true)
+
+# UserItem.create(item_id: 3, user_id: 3, buy_date: Date.new(2020, 03, 
+# 17), used: false, future_interest: true)
+
+# UserItem.create(item_id: 16, user_id: 6, buy_date: Date.new(2020, 03, 
+# 17), used: false, future_interest: true)
+
+UserItem.create(item_id: 1, user_id: 7, buy_date: Date.new(2020,9, 17), used: false, future_interest: true)
+
+UserItem.create(item_id: 14, user_id: 2, buy_date: Date.new(2020,9, 10), used: false, future_interest: true)
+
+UserItem.create(item_id: 15, user_id: 4, buy_date: Date.new(2020,9, 10), used: false, future_interest: true)
+
+UserItem.create(item_id: 13, user_id: 4, buy_date: Date.new(2020,9, 10), used: false, future_interest: true)
+
+UserItem.create(item_id: 17, user_id: 5, buy_date: Date.new(2020, 06, 10), used: false, future_interest: true)

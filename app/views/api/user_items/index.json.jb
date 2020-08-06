@@ -1,0 +1,10 @@
+@user_items.each do |item|
+  {id: item.id,
+  item_id: item.item_id,
+  user_id: item.user_id,
+  buy_date: item.buy_date, 
+  used: item.used, 
+  future_interest: item.future_interest
+
+}
+end

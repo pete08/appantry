@@ -6,21 +6,32 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-food = [
-"bread crumbs",
-"Pasta",
-"Couscous",
-"Rice",
-"flour",
-"White sugar",
-"Brown sugar",
-"Powdered sugar",
-"Baking powder",
-"Active dry yeast",
-"Chicken stock",
-"Beef stock"
-]
+# food = [
+# "bread crumbs",
+# "Pasta",
+# "Couscous",
+# "Rice",
+# "flour",
+# "White sugar",
+# "Brown sugar",
+# "Powdered sugar",
+# "Baking powder",
+# "Active dry yeast",
+# "Chicken stock",
+# "Beef stock"
+# ]
 
-food.each do |item|
-  Item.create[name: item.downcase, container: "pantry"]
-end
+# food.each do |item|
+#   Item.create[name: item.downcase, container: "pantry"]
+# end
+
+
+# User.create(email: "red@mail.com", ppl_in_house: 2)
+# User.create(email: "alabaster@email.com", ppl_in_house: 1)
+# User.create(email: "greeves@email.com", ppl_in_house: 4)
+# User.create(email: "yellow@email.com", ppl_in_house: 1)
+# User.create(email: "teal@email.com", ppl_in_house: 2)
+# User.create(email: "hue@email.com", ppl_in_house: 3)
+# User.create(email: "opulent@email.com", ppl_in_house: 4)
+
+UserItem.create(item_id: 1, user_id: 1, buy_date:)

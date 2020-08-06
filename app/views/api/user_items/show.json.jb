@@ -1,0 +1,8 @@
+{
+  id: @user_item.id,
+  item_id: @user_item.item_id,
+  user_id: @user_item.user_id,
+  buy_date: @user_item.buy_date,
+  used: @user_item.used,
+  future_interest: @user_item.future_interest,
+}

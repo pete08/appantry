@@ -6,10 +6,13 @@ class Api::UserItemsController < ApplicationController
   end
 
   def create
+    name = (params[:name]).downcase
+    p name
     UserItem.create(
+      name: name,
       item_id: params[:item_id],
       user_id: params[:user_id],
-      buy_date: params[:buy_date],
+      buy_date: Date.current,
       used: false,
       future_interest: true
     )

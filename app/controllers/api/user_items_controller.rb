@@ -20,12 +20,10 @@ class Api::UserItemsController < ApplicationController
     render "show.json.jb"
   end
 
-  def show
-
   def update
     @user_items = UserItem.where(user_id: current_user.id)
     @user_item = @user_items.find_by(id: params[:id])
-
+    p @user_item
     @user_item.update(
       used: params[:used] || @user_item.used,
       future_interest: params[:future_interest] || @user_item.future_interest

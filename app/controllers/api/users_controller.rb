@@ -8,6 +8,7 @@ class Api::UsersController < ApplicationController
       password: params[:password],
       # password_confirmation: params[:password_confirmation]
     )
+
     #Happy/Sad Path:
     if user.save
       render json: { message: "User created successfully" }, status: :created
@@ -16,5 +17,12 @@ class Api::UsersController < ApplicationController
     end
 
   end
+
+  def show
+    @user = User.find_by(id: params[:id])
+
+    render ("show.json.jb")
+  end
+
 
 end

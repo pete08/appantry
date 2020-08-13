@@ -1,0 +1,5 @@
+{
+  id: @user.id ,
+  user_name: @user.name ,
+  Amount_of_people_in_house: @user.ppl_in_house
+}

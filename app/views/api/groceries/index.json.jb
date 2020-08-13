@@ -1,6 +1,0 @@
-@user_items.each do |item|
-  {
-  name: item.name,
-  last_purchased_on: item.buy_date, 
-}
-end

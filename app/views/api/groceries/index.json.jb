@@ -1,0 +1,7 @@
+@user_items.map do |item|
+  {
+    item: item.name,
+    used: item.used, 
+    future_interest: item.future_interest, 
+  }
+end

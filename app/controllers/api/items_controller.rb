@@ -2,10 +2,15 @@ class Api::ItemsController < ApplicationController
 
 
   def index
-    render json: {message: "howdy from index action in items controller!"}
+    @items = Item.all
+    render "index.json.jb"
   end
 
-
+  def show
+    @item = Item.find_by(id: params[:id])
+    p @item
+    render "show.json.jb"
+  end
 
 
 

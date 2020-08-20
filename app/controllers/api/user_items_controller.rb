@@ -1,11 +1,11 @@
 class Api::UserItemsController < ApplicationController
-  before_action :authenticate_user
+  # before_action :authenticate_user
   
   def index
-    @user_items = UserItem.where(user_id: current_user.id)
+    @user_items = UserItem.where(user_id: params[:id]) #UPDATE .where(user_id: current_user.id) for using log in requirement
     render "index.json.jb"
   end
-
+  
   def create
     name = (params[:name]).downcase
     UserItem.create(
@@ -21,7 +21,7 @@ class Api::UserItemsController < ApplicationController
   end
 
   def update
-    @user_items = UserItem.where(user_id: current_user.id)
+    @user_items = UserItem.where(user_id: params[:id]) #UPDATE .where(user_id: current_user.id) for using log in requirement
     @user_item = @user_items.find_by(id: params[:id])
     p @user_item
     @user_item.update(

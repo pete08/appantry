@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     get "/items/:id" => "items#show" # 
     
     get "/user_items" => "user_items#index" #    UPDATE ------------------
-    post "/user_items" => "user_items#create" #
+    post "/user_items" => "user_items#create" # 
     put "/user_items/:id" => "user_items#update" # 
 
 

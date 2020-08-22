@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   namespace :api do
 
-    get "/groceries" => "groceries#index" # UPDATE -----------
+    get "/groceries" => "groceries#index"#  UPDATE -----------
     
     get "/items" => "items#index" #
     get "/items/:id" => "items#show" # 

@@ -3,7 +3,7 @@ class Api::GroceriesController < ApplicationController
 
   def index
 
-    @user_items = UserItem.where(user_id: current_user.id, used: "true", future_interest: "true") #UPDATE .where(user_id: current_user.id) for using log in requirement -------------------------------------------------------------------
+    @user_items = UserItem.where(user_id: current_user.id, used: "true", future_interest: "true") 
 
     render "index.json.jb"
   end

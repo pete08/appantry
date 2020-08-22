@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :null_session
 
   def current_user
-    User.first
+    User.find_by(id: 4)
     # auth_headers = request.headers["Authorization"]
     # if auth_headers.present? && auth_headers[/(?<=\A(Bearer ))\S+\z/]
     #   token = auth_headers[/(?<=\A(Bearer ))\S+\z/]
@@ -18,6 +18,7 @@ class ApplicationController < ActionController::Base
     #     nil
     #   end
     # end
+
   end
 
   helper_method :current_user

@@ -91,6 +91,7 @@ GEM
       multi_json
     jbuilder (2.10.0)
       activesupport (>= 5.0.0)
+    json (2.3.1)
     jwt (2.2.1)
     listen (3.2.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
@@ -196,6 +197,7 @@ DEPENDENCIES
   http
   jb
   jbuilder (~> 2.7)
+  json
   jwt
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)

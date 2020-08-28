@@ -11,9 +11,10 @@ class Api::UserItemsController < ApplicationController
   
   def create
     name = (params[:name]).downcase
+    item = Item.find_by(name: params[:name])
     UserItem.create(
       name: name,
-      item_id: params[:item_id],
+      item_id: item.id,
       user_id: current_user.id,
       buy_date: Date.current,
       used: false,

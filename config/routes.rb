@@ -10,14 +10,19 @@ Rails.application.routes.draw do
 
   namespace :api do
 
-    get "/groceries" => "groceries#index"#  UPDATE -----------
+    get "/groceries" => "groceries#index"# 
+    get "/groceries/:id" => "groceries#show" 
+    post "/groceries" => "groceries#create" # 
+    put "/groceries/:id" => "groceries#update" # 
     
     get "/items" => "items#index" #
     get "/items/:id" => "items#show" # 
     
-    get "/user_items" => "user_items#index" #    UPDATE ------------------
+    get "/user_items" => "user_items#index" # 
+    get "/user_items/:id" => "user_items#show" 
     post "/user_items" => "user_items#create" # 
     put "/user_items/:id" => "user_items#update" # 
+    delete "/user_items/:id" => "user_items#destroy" # 
 
 
 

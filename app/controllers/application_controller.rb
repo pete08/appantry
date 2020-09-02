@@ -4,8 +4,11 @@ class ApplicationController < ActionController::Base
   def current_user
     # User.find_by(id: 4)
     auth_headers = request.headers["Authorization"]
+    p auth_headers
+    
     if auth_headers.present? && auth_headers[/(?<=\A(Bearer ))\S+\z/]
       token = auth_headers[/(?<=\A(Bearer ))\S+\z/]
+      p token
       begin
         decoded_token = JWT.decode(
           token,
@@ -13,7 +16,9 @@ class ApplicationController < ActionController::Base
           true,
           { algorithm: "HS256" }
         )
+        p decoded_token
         User.find_by(id: decoded_token[0]["user_id"])
+        p User.find_by(id: decoded_token[0]["user_id"])
       rescue JWT::ExpiredSignature
         nil
       end

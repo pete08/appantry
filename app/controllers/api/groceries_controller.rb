@@ -26,7 +26,7 @@ class Api::GroceriesController < ApplicationController
       item_id: item.id,
       user_id: current_user.id,
       buy_date: Date.current,
-      used: false,
+      used: true,
       future_interest: true
     )
     @user_item = UserItem.last
@@ -34,6 +34,7 @@ class Api::GroceriesController < ApplicationController
   end
 
   def update
+    p current_user
     @user_items = UserItem.where(user_id: current_user.id) 
 
     @user_item = @user_items.find_by(id: params[:id])

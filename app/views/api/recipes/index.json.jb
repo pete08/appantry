@@ -1,0 +1,8 @@
+@recipes.each do |recipe|
+  {
+  title: recipe["title"],
+  image: recipe["image"],
+  needIng: recipe["missedIngredients"],
+  haveIng: recipe["usedIngredients"],
+}
+end

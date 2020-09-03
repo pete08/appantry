@@ -24,11 +24,12 @@ Rails.application.routes.draw do
     put "/user_items/:id" => "user_items#update" # 
     delete "/user_items/:id" => "user_items#destroy" # 
 
-
-
     post "/users" => "users#create" #
     get "/users/:id" => "users#show" # 
     post "/sessions" => "sessions#create" #
+
+    get "/recipes" => "recipes#index"
+    
 
   end
 end

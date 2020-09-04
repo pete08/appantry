@@ -1,24 +1,52 @@
 class Api::RecipesController < ApplicationController
 
   def index
-    # @user_items = UserItem.where(user_id: current_user.id) 
+    @user_items = UserItem.where(user_id: current_user.id) 
     p "*" * 45
-    # @user_items = @user_items.where(used: "false", future_interest: "true")
-    api_key = Rails.application.credentials.spoon_api[:api_key]
-    count = 2
-    @data = HTTP
-      .get("https://api.spoonacular.com/recipes/findByIngredients?apiKey=#{api_key}&ingredients=eggs,flour,milk,chocolate&number=#{count}")
-      .parse
+    @user_items = @user_items.where(used: "false", future_interest: "true")
     
-    p "*" * 45
-    p "*" * 45
+    items = []
+    @user_items.each do |item|
+      item = item["name"]
+      item = item.downcase
+      items << item.gsub(/\s+/, "%20")
+      
+    end
+    p"*" * 45
+    p"*" * 45
+    p "items: "
+    p items
+    p"*" * 45
+    p"*" * 45
+    
+    
+    api_key = Rails.application.credentials.spoon_api[:api_key]
+    count = 3
+    url = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=#{api_key}&number=#{count}&ingredients="
+    
+    append = ""
+    items.each do |item|
+      append += item + "," 
+    end
+    url_full = url + append
+    p"*" * 45
+    p"*" * 45
+    p url_full
+    p"*" * 45
+    
+    @data = HTTP
+    .get(url_full)
+    .parse
+
+    p "@data.class: "
     p @data.class
-    p "*" * 45
-    p "*" * 45
-    p "@data[0][\"id\"]"
-    p @data[0]["id"]
-    p "@data[0][\"title\"]"
-    p @data[0]["title"]
+    p "*" * 45 
+    
+  #   p "*" * 45
+  #   p "*" * 45
+  #   p @data.class
+  #   p "*" * 45
+  #   p "*" * 45
   
     @recipes_list = []
     @data.each do |recipe|
@@ -53,19 +81,23 @@ class Api::RecipesController < ApplicationController
       end
       recipe_temp[:have] = have_temp
 
-
+      #####################################################
+      #############Obtain Recipes' Steps####################
       @recipe_directions = HTTP
         .get("https://api.spoonacular.com/recipes/#{id}/analyzedInstructions?apiKey=#{api_key}")
         .parse
-
-      recipe_steps = @recipe_directions[0]["steps"]
-      steps_temp = []
-      recipe_steps.each do |step|
-        steps_temp << step["step"]
+      if @recipe_directions[0] != nil
+        recipe_steps = @recipe_directions[0]["steps"]
+        steps_temp = []
+        recipe_steps.each do |step|
+          steps_temp << step["step"]
+        end
       end
       
       recipe_temp[:steps]  = steps_temp
-
+      #############Obtain Recipes' Steps####################
+      #####################################################
+      
       
       
       @recipes_list.append(recipe_temp)

@@ -3,7 +3,7 @@
   recipe_id: recipe["id"],
   image: recipe["image"],
   title: recipe["title"],
-  need: recipe["need"],
+  need: recipe["need"] ,
   have: recipe["have"],
   steps: recipe["steps"],
 }

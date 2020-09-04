@@ -1,8 +1,11 @@
-@recipes.each do |recipe|
+@recipes_list.each do |recipe|
   {
-  title: recipe["title"],
+  recipe_id: recipe["id"],
   image: recipe["image"],
-  needIng: recipe["missedIngredients"],
-  haveIng: recipe["usedIngredients"],
+  title: recipe["title"],
+  need: recipe["need"],
+  have: recipe["have"],
+  steps: recipe["steps"],
 }
 end
+

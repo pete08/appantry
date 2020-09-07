@@ -4,7 +4,8 @@ class Api::GroceriesController < ApplicationController
   def index
 
     @user_items = UserItem.where(user_id: current_user.id, used: "true", future_interest: "true") 
-
+    @user_items = @user_items.sort_by &:name
+    p @user_items
     render "index.json.jb"
   end
   

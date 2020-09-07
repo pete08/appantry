@@ -30,6 +30,6 @@ Rails.application.routes.draw do
 
     get "/recipes" => "recipes#index"
     
-
+    get "/orders" => "orders#index"
   end
 end

@@ -5,6 +5,7 @@ class Api::UserItemsController < ApplicationController
     @user_items = UserItem.where(user_id: current_user.id) 
     p "*" * 45
     @user_items = @user_items.where(used: "false", future_interest: "true")
+    @user_items = @user_items.sort_by &:name
     p "*" * 45
     render "index.json.jb"
   end

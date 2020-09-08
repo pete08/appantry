@@ -1,0 +1,8 @@
+@recipes.each do |recipe|
+  {
+    title: recipe.title,
+    image: recipe.image,
+    source_url: recipe.source_url,
+    use: recipe.use,
+  }
+end

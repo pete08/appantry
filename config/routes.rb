@@ -31,5 +31,7 @@ Rails.application.routes.draw do
     get "/recipes" => "recipes#index"
     
     get "/orders" => "orders#index"
+
+    get "/cooks" => "cooks#index"
   end
 end

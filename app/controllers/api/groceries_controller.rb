@@ -39,27 +39,7 @@ class Api::GroceriesController < ApplicationController
     @user_items = UserItem.where(user_id: current_user.id) 
 
     @user_item = @user_items.find_by(id: params[:id])
-    p "*" * 45
-    p "*" * 45
-    p "@user_item:" 
-    p @user_item
-    p "*" * 45
-    p "*" * 45
-    p "@user_item.future_interest:" 
-    p @user_item.future_interest
-    p "*" * 45
-    p "*" * 45
-    p "@user_item.used:"
-    p @user_item.used
-    p "*" * 45
-    p "*" * 45
-    p "params: "
-    p params
 
-    p "*" * 45
-    p "*" * 45
-    p "*" * 45
-    p "*" * 45
     @user_item.update(
       used: params[:used], #|| @user_item.used,
       future_interest: params[:future_interest] || @user_item.future_interest

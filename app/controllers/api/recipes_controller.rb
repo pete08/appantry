@@ -48,6 +48,9 @@ class Api::RecipesController < ApplicationController
   #   p @data.class
   #   p "*" * 45
   #   p "*" * 45
+    p "*" * 45
+    p @data 
+    p "*" * 45
   
     @recipes_list = []
     @data.each do |recipe|

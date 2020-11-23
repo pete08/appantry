@@ -17,10 +17,7 @@ class Api::RecipesController < ApplicationController
     p "items: "
     p items
     p"*" * 45
-  #   PRINT OUT ITEMS TO SEE WHAT SPOONACULAR API IS RECEIVING AS ITEMS ARRAY
-  
-    
-    
+
     api_key = Rails.application.credentials.spoon_api[:api_key]
     count = 3
     url = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=#{api_key}&number=#{count}&ingredients="
@@ -39,18 +36,13 @@ class Api::RecipesController < ApplicationController
     .get(url_full)
     .parse
 
-    p "@data.class: "
-    p @data.class
-    p "*" * 45 
+    # p "@data.class: "
+    # p @data.class
+    # p "*" * 45 
     
-  #   p "*" * 45
-  #   p "*" * 45
-  #   p @data.class
-  #   p "*" * 45
-  #   p "*" * 45
-    p "*" * 45
-    p @data 
-    p "*" * 45
+    # p "*" * 45
+    # p @data 
+    # p "*" * 45
   
     @recipes_list = []
     @data.each do |recipe|

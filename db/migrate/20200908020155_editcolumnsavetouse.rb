@@ -3,3 +3,4 @@ class Editcolumnsavetouse < ActiveRecord::Migration[6.0]
     rename_column :recipes, :save, :use
   end
 end
+z
